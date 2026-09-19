@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#07110e">
-    <meta name="description" content="MINTCS2 — игровой проект Counter-Strike 2">
-    <title>MINTCS2 — CS2 Gaming Project</title>
-
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07110e">
+<title>MINTCS2 — Правила проекта</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
         :root {
             --bg: #06100d;
             --bg-soft: #091613;
@@ -1192,528 +1191,71 @@
         .footer-legal a:hover { color:var(--mint); }
         .quick-only { grid-template-columns:1fr !important; }
 
-    </style>
-    <link rel="icon" type="image/png" href="favicon.png">
+    
+.rules-page{padding:70px 0}
+.rules-back{margin-bottom:24px;display:inline-flex}
+.rules-page .stat-value{font-size:16px !important;line-height:1.45}
+</style>
 </head>
-
 <body>
-
-<header>
-    <div class="container nav">
-        <a href="#top" class="logo">
-            <div class="logo-mark">M</div>
-            <div>MINT<span>CS2</span></div>
-        </a>
-
-        <nav class="nav-links" id="navLinks">
-            <a class="nav-link" href="#top">Главная</a>
-            <a class="nav-link" href="#servers">Сервера</a>
-            <a class="nav-link" href="#stats">Статистика</a>
-            <a class="nav-link" href="rules.html">Правила</a>
-            <a class="nav-link" href="#news">Новости</a>
-            <a class="nav-link" href="#support">Поддержка</a>
-        </nav>
-
-        <div class="nav-actions">
-
-            <button class="profile-btn" onclick="showToast('Авторизация будет доступна после подключения Steam')">
-                <div class="avatar">M</div>
-                <span>Войти</span>
-            </button>
-
-            <button class="icon-btn mobile-menu" onclick="toggleMenu()" aria-label="Меню">
-                ☰
-            </button>
-        </div>
-    </div>
-</header>
-
-<main id="top">
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container hero-grid reveal">
-            <div>
-                <div class="eyebrow">
-                    <span class="pulse"></span>
-                    MINT PROJECT
-                </div>
-
-                <h1>
-                    Играем в<br>
-                    <span class="mint">своём стиле.</span>
-                </h1>
-
-                <p class="hero-description">
-                    MINTCS2 — игровое пространство для Counter-Strike 2.
-                    Стабильные сервера, приятное сообщество и всё необходимое
-                    для комфортной игры.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#servers" class="btn btn-primary">
-                        ▶ &nbsp; Найти сервер
-                    </a>
-
-                    <a class="btn btn-secondary"
-                       href="https://discord.gg/DdpefAz5XS"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Discord ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVERS -->
-    <section id="servers">
+<main class="rules-page">
+<div class="container">
+<a class="btn btn-secondary rules-back" href="index.html">← На главную</a>
+<section id="rules">
         <div class="container">
             <div class="section-head reveal">
                 <div>
-                    <div class="section-title">Игровые сервера</div>
-                    <div class="section-subtitle">
-                        Выбирай режим и заходи в игру
-                    </div>
-                </div>
-
-                <button class="btn btn-secondary" onclick="refreshServers()">
-                    ↻ Обновить
-                </button>
-            </div>
-
-            <div class="server-grid">
-
-                <article class="server-card reveal">
-                    <div class="server-top">
-                        <div class="server-id">#01</div>
-                    </div>
-
-                    <div class="server-name">AWP LEGO</div>
-                    
-
-                    <div class="server-info">
-                        <div class="server-status">
-                            <i></i>
-                            Сервер доступен
-                        </div>
-
-                        <div class="server-ping">
-                            32 ms
-                        </div>
-                    </div>
-
-                    <div class="server-actions">
-                        <button class="btn btn-primary"
-                                onclick="connectServer('185.XX.XX.10:27015')">
-                            Подключиться
-                        </button>
-
-                        <button class="btn btn-secondary"
-                                onclick="copyIP('185.XX.XX.10:27015')">
-                            IP
-                        </button>
-                    </div>
-                </article>
-
-                <article class="server-card reveal">
-                    <div class="server-top">
-                        <div class="server-id">#02</div>
-                    </div>
-
-                    <div class="server-name">MIRAGE</div>
-                    
-
-                    <div class="server-info">
-                        <div class="server-status">
-                            <i></i>
-                            Сервер доступен
-                        </div>
-
-                        <div class="server-ping">
-                            29 ms
-                        </div>
-                    </div>
-
-                    <div class="server-actions">
-                        <button class="btn btn-primary"
-                                onclick="connectServer('185.XX.XX.11:27015')">
-                            Подключиться
-                        </button>
-
-                        <button class="btn btn-secondary"
-                                onclick="copyIP('185.XX.XX.11:27015')">
-                            IP
-                        </button>
-                    </div>
-                </article>
-
-                <article class="server-card reveal">
-                    <div class="server-top">
-                        <div class="server-id">#03</div>
-                    </div>
-                    <div class="server-name">Скоро будет доступен.</div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- STATISTICS -->
-    <section id="stats">
-        <div class="container">
-            <div class="section-head reveal">
-                <div>
-                    <div class="section-title">Статистика проекта</div>
-                    <div class="section-subtitle">
-                        MINTCS2 в цифрах
-                    </div>
+                    <div class="section-title">Правила проекта MINTCS2</div>
+                    <div class="section-subtitle">Общие положения</div>
                 </div>
             </div>
-
-            <div class="stats-grid">
-                <div class="stat reveal">
-                    <div class="stat-icon">◉</div>
-                    <div class="stat-value">Скоро</div>
-                    <div class="stat-label">Всего игроков</div>
-                </div>
-
-                <div class="stat reveal">
-                    <div class="stat-icon">♟</div>
-                    <div class="stat-value">Скоро</div>
-                    <div class="stat-label">Игроков за неделю</div>
-                </div>
-
-                <div class="stat reveal">
-                    <div class="stat-icon">⌁</div>
-                    <div class="stat-value">Скоро</div>
-                    <div class="stat-label">Аптайм серверов</div>
-                </div>
-
-                <div class="stat reveal">
-                    <div class="stat-icon">★</div>
-                    <div class="stat-value">Скоро</div>
-                    <div class="stat-label">Матчей сегодня</div>
+            <div class="panel reveal" style="padding:24px;">
+                <div style="display:grid;gap:12px;">
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">1. Прецедентная система правил</div>
+                        <div class="news-text">На проекте действует прецедентная система правил. Если игрок совершил нарушение, которое не описано ни в каких правилах проекта, то он может быть наказан с разрешения Команды проекта.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">2. Согласие с правилами</div>
+                        <div class="news-text">Подключившись к нашим серверам или посетив официальный сайт проекта, Вы автоматически соглашаетесь с данными правилами и обязуетесь их соблюдать. Игроком является любой подключившийся на игровой сервер человек. Администрация и привилегированные игроки не отличаются от остальных - Игрок есть игрок.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">3. Деструктивные действия</div>
+                        <div class="news-text">Запрещены деструктивные действия по отношению к проекту: неконструктивная критика, призывы покинуть проект, попытки нарушить развитие проекта, атаки на ресурсы проекта или любые другие действия. Срок наказания от 30 дней до Черного Списка проекта.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">4. Поддержание порядка и коммуникации</div>
+                        <div class="news-text">Для поддержания комфортной и продуктивной атмосферы, Команда проекта оставляет за собой право принять необходимые меры, включая временную или постоянную блокировку аккаунта, а также ограничение доступа к ресурсам проекта, таким как Discord-сервер и социальные сети. Эти меры могут быть применены в исключительных случаях, даже если действия участника формально не нарушают установленные правила, но препятствуют поддержанию порядка и конструктивной коммуникации. Обнаружение нарушений правил со стороны игрока в личных сообщениях с другими, нарушивший правила игрок не освобождается от ответственности за свои слова.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">5. Утеря привилегий аккаунта</div>
+                        <div class="news-text">Проект не несет ответственности за утерянные привилегии аккаунта в случае скачивания вами запрещенного софта, а также модов, тематических программ, взлома, обмана, невнимательности и т.п., а также любых действий, совершенных вручную с игрового аккаунта. Администрация может восстановить утраченные привилегии в отдельных ситуациях, но не берет на себя обязательств по восстановлению.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">6. Выбор наказания</div>
+                        <div class="news-text">Руководство оставляет за собой право на выбор любого наказания за любое нарушение, ориентируясь на тяжесть содеянного и предыдущую историю нарушений, от отсутствия наказания или предупреждения до полной блокировки на всех серверах проекта. Если ориентировочное наказание за нарушение не указано, исключительное право наказать игрока, ориентируясь на тяжесть содеянного и предыдущую историю нарушений, остается за администрацией.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">7. Распространение информации</div>
+                        <div class="news-text">Запрещено распространение информации, которая была получена в ходе администраторской деятельности и/или в следствии взаимодействия с администрацией, а именно: запись разговоров/информации получаемой на обзвоне или проверке.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">8. Использование уязвимостей</div>
+                        <div class="news-text">Запрещено использование недоработок/уязвимостей в правилах проекта/сервера. Блокировка от 7 дней до пожизненного срока.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">9. Правила обязательны для всех</div>
+                        <div class="news-text">Наши правила проекта являются обязательными для всех игроков, независимо от пола, национальности и вероисповедания.</div>
+                    </article>
+                    <article class="stat" style="padding:20px;">
+                        <div class="stat-value" style="font-size:16px;">10. Область действия правил</div>
+                        <div class="news-text">Данные правила являются действующими на всех игровых серверах/ресурсах проекта MINTCS2</div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- QUICK ACCESS -->
-    <section>
-        <div class="container content-grid quick-only">
-            <div class="panel reveal">
-                <div class="panel-head">
-                    <div class="panel-title">Быстрый доступ</div>
-                </div>
-
-                <div class="quick-grid">
-
-                    <a href="#servers" class="quick">
-                        <div class="quick-icon">◈</div>
-                        <div class="quick-title">Сервера</div>
-                        <div class="quick-text">
-                            Найти свободный сервер
-                        </div>
-                    </a>
-
-                    <a href="#stats" class="quick">
-                        <div class="quick-icon">↗</div>
-                        <div class="quick-title">Рейтинг</div>
-                        <div class="quick-text">
-                            Таблица лучших игроков
-                        </div>
-                    </a>
-
-                    <a href="#support" class="quick">
-                        <div class="quick-icon">?</div>
-                        <div class="quick-title">Поддержка</div>
-                        <div class="quick-text">
-                            Создать обращение
-                        </div>
-                    </a>
-
-                    <a href="rules.html" class="quick">
-                        <div class="quick-icon">✓</div>
-                        <div class="quick-title">Правила</div>
-                        <div class="quick-text">
-                            Ознакомиться с правилами
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-        </div>
-    </section>
-
-    <!-- NEWS -->
-    <section id="news">
-        <div class="container">
-
-            <div class="section-head reveal">
-                <div>
-                    <div class="section-title">Новости проекта</div>
-                    <div class="section-subtitle">
-                        Что нового в MINTCS2
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-grid">
-
-                <article class="news reveal">
-                    <div class="news-date">16 СЕНТЯБРЯ 2026 ГОДА</div>
-                    <div class="news-title">
-                        СОЗДАНИЕ ПРОЕКТА MINTCS2
-                    </div>
-                    <div class="news-text">
-                        Мы хотим сделать режим AWP LEGO в зимнем и в летнем стиле. Следите за новостями проекта в нашем дискорд канале!
-                    </div>
-                </article>
-
-                <article class="news reveal">
-                    <div class="news-date">В РАЗРАБОТКЕ</div>
-                    <div class="news-title">
-                        AWP LEGO (ЗИМНЯЯ ВЕРСИЯ)
-                    </div>
-                    <div class="news-text">
-                        Мы хотим сделать режим AWP LEGO в зимнем и в летнем стиле. Следите за новостями проекта в нашем дискорд канале!
-                    </div>
-                </article>
-
-                <article class="news reveal">
-                    <div class="news-date">Сообщество</div>
-                    <div class="news-title">
-                        Присоединяйся к MINT
-                    </div>
-                    <div class="news-text">
-                        Следи за обновлениями, общайся с игроками
-                        и участвуй в жизни проекта.
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SUPPORT -->
-    <section id="support">
-        <div class="container">
-            <div class="panel support-panel reveal">
-
-                <div class="support-glow"></div>
-
-                <div class="support-content">
-                    <div class="eyebrow">
-                        <span class="pulse"></span>
-                        SUPPORT
-                    </div>
-
-                    <div class="section-title" style="font-size:28px">
-                        Нужна помощь?
-                    </div>
-
-                    <div class="section-subtitle" style="
-                        max-width:600px;
-                        line-height:1.7;
-                        margin-top:9px;
-                    ">
-                        Если возникла проблема с сервером, покупкой
-                        или аккаунтом — напиши нам. Поддержка MINTCS2
-                        поможет разобраться.
-                    </div>
-
-                    <div class="hero-buttons" style="margin-top:22px">
-                        <a class="btn btn-primary"
-                           href="https://discord.gg/DdpefAz5XS"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Discord поддержки ↗
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="container footer-inner">
-        <div class="footer-copy">
-            © 2026 <strong>MINTCS2</strong> — игровой проект Counter-Strike 2.<br>
-            Все права защищены.
-        </div>
-
-        <div class="footer-links">
-            <a href="#top">Главная</a>
-            <a href="#servers">Сервера</a>
-            <a href="rules.html">Правила</a>
-            <a href="#news">Новости</a>
-            <a href="#support">Поддержка</a>
-        </div>
-    </div>
-
-        <div class="footer-legal">
-            <a href="#" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Оферта</a>
-        </div>
-</footer>
-
-<!-- MODAL -->
-<div class="modal" id="serverModal" onclick="closeModal(event)">
-    <div class="modal-box">
-        <div class="modal-head">
-            <div class="modal-title">Подключение к серверу</div>
-            <button class="modal-close" onclick="closeServerModal()" aria-label="Закрыть">
-                ✕
-            </button>
-        </div>
-
-        <div class="modal-text">
-            Скопируй IP-адрес и подключись к серверу через консоль Counter-Strike 2.
-        </div>
-
-        <code class="modal-ip" id="modalIP"></code>
-
-        <button class="btn btn-primary" style="width:100%" onclick="copyModalIP()">
-            Скопировать IP
-        </button>
-    </div>
 </div>
-
-<div class="toast" id="toast"></div>
-
-<script>
-    let toastTimer;
-
-    function showToast(message) {
-        const toast = document.getElementById("toast");
-
-        toast.textContent = message;
-        toast.classList.add("show");
-
-        clearTimeout(toastTimer);
-
-        toastTimer = setTimeout(() => {
-            toast.classList.remove("show");
-        }, 2600);
-    }
-
-    function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("open");
-    }
-
-    document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", () => {
-            document.getElementById("navLinks").classList.remove("open");
-        });
-    });
-
-    function copyIP(ip) {
-        navigator.clipboard.writeText(ip)
-            .then(() => showToast("IP скопирован: " + ip))
-            .catch(() => showToast("Не удалось скопировать IP"));
-    }
-
-    function connectServer(ip) {
-        document.getElementById("modalIP").textContent = ip;
-        document.getElementById("serverModal").classList.add("show");
-    }
-
-    function closeServerModal() {
-        document.getElementById("serverModal").classList.remove("show");
-    }
-
-    function closeModal(event) {
-        if (event.target.id === "serverModal") {
-            closeServerModal();
-        }
-    }
-
-    function copyModalIP() {
-        const ip = document.getElementById("modalIP").textContent;
-
-        if (!ip) return;
-
-        navigator.clipboard.writeText(ip)
-            .then(() => showToast("IP скопирован"))
-            .catch(() => showToast("Не удалось скопировать IP"));
-    }
-
-    function refreshServers() {
-        const button = document.querySelector("#servers .section-head .btn");
-
-        if (button) {
-            button.disabled = true;
-            button.textContent = "↻ Обновление...";
-
-            setTimeout(() => {
-                button.disabled = false;
-                button.textContent = "↻ Обновить";
-                showToast("Список серверов обновлён");
-            }, 700);
-        }
-    }
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-            closeServerModal();
-            document.getElementById("navLinks").classList.remove("open");
-        }
-    });
-
-    /* Плавное появление блоков при прокрутке */
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.12
-        });
-
-        revealElements.forEach(element => observer.observe(element));
-    } else {
-        revealElements.forEach(element => element.classList.add("visible"));
-    }
-
-    /* Подсветка активного пункта меню */
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-
-            navLinks.forEach(link => link.classList.remove("active"));
-
-            const activeLink = document.querySelector(
-                '.nav-link[href="#' + entry.target.id + '"]'
-            );
-
-            if (activeLink) {
-                activeLink.classList.add("active");
-            }
-        });
-    }, {
-        rootMargin: "-35% 0px -55% 0px",
-        threshold: 0
-    });
-
-    sections.forEach(section => sectionObserver.observe(section));
-</script>
-
+</main>
 </body>
 </html>
